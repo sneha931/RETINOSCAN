@@ -1,0 +1,78 @@
+.dashboard {
+    display: flex;
+  }
+  
+  .dashboard .left {
+    margin: 3% 20% 2% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .headings {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; 
+  }
+  
+  .headings button {
+    margin-bottom: 15px; 
+    border: none;
+   cursor: pointer;
+   font-weight: bold;
+   border-radius: 10px;
+  }
+  .headings button:hover{
+    background-color: rgb(211, 241, 241);
+  }
+  .dashboard .left .but button{
+    background-color: blue;
+    border-radius: 10px;
+    border: none;
+    padding: 13px;
+    font-weight: 700;
+    color: white;
+  }
+  .dashboard .right{
+    margin: 2% 2% 20% 2%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .dashboard .right p{
+    color: #129c9c;
+  }
+  .dashboard .right input {
+    border-radius: 10px;
+    padding: 8px;
+    margin: 10px;
+    width: 100vh;
+    background-color: hsl(180, 54%, 92%);
+  }
+  .dashboard .right input::placeholder{
+    color: rgb(18, 156, 156);
+  }
+  .dashboard .right table{
+        border-collapse: separate; 
+        border-spacing: 0 10px; 
+        width: 100vh; 
+        border: 1px solid #579db9; 
+        border-radius: 10px;
+  }
+  th, td {
+    padding: 8px; 
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2; 
+  }
+  table tr .id,.date{
+    color: #129c9c;
+  }
+  table tr .area{
+     background-color: #bee9e9;
+     border-radius: 10px;
+  }
+  table tr a{
+    text-decoration: none;
+  }

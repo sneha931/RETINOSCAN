@@ -1,0 +1,69 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    position: relative; 
+  }
+  
+  h2#retinoscan {
+    position: absolute;
+    top: 20px; 
+    left: 20px;
+    margin: 0; 
+  }
+  
+  .signinform {
+    width: 400px; 
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+  }
+  
+  .signinform h2 {
+    margin-bottom: 10px;
+  }
+  
+  .signinform p {
+    margin-bottom: 20px;
+  }
+  
+  .signinform button {
+    width: 100%; 
+    padding: 10px 0; 
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .signinform button#sign {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .signinform button#account {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  .signinform button:hover {
+    opacity: 0.8;
+  }
+  
+  .signinform a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .signinform a:hover {
+    text-decoration: underline;
+  }
+  
