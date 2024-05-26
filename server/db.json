@@ -1,0 +1,19 @@
+{
+    "userinfo":[
+        
+            {
+                "id":1,
+                "name":"smith",
+                "date created":"Dec 15,2022",
+                "AI analysis":"Retinopathy"
+             },
+             {
+                
+                "id":2,
+                "name":"john",
+                "date created":"Nov 15,2022",
+                "AI analysis":"Normal"
+             }
+       
+            ]
+}
