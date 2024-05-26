@@ -21,7 +21,7 @@ function Capture() {
         formData.append('image', dataURLtoFile(image, 'capture.jpg')); 
 
         try {
-            const res = await axios.post("http://localhost:8000/upload/capture", formData, {
+            const res = await axios.post("https://retinoscan-server.vercel.app/upload/capture", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

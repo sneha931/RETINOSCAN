@@ -9,7 +9,7 @@ export default function ForgotPassword() {
     async function submit(e) {
         e.preventDefault();
         try{
-           await axios.post("http://localhost:8000/api/Forgotpassword",{email})
+           await axios.post("https://retinoscan-server.vercel.app/api/Forgotpassword",{email})
            alert("check Your email for password")
            navigate('/signinaccount')
         }

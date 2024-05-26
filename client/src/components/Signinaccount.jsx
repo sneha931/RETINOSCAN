@@ -13,7 +13,7 @@ export default function Signinaccount() {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await axios.post("http://localhost:8000/api/signinaccount", { email, password });
+            const res = await axios.post("https://retinoscan-server.vercel.app/api/signinaccount", { email, password });
             if (res.data==="exists") {
                 navigate("/dashboard");
             } else if (res.data==="not exists") {

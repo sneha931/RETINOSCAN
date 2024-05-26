@@ -10,7 +10,7 @@ const paymentsection=()=>{
 useEffect(() => {
   const fetchItems = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/bill/items');
+      const response = await axios.get('https://retinoscan-server.vercel.app/bill/items');
       setItems(response.data);
     } catch (error) {
       console.error('Error fetching items:', error);

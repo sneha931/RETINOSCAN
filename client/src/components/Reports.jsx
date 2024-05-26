@@ -11,7 +11,7 @@ export default function Reports() {
   const[users,setUsers]=useState([])
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/report/details");
+      const response = await axios.get("https://retinoscan-server.vercel.app/report/details");
       setUsers(response.data);
     } catch (error) {
       console.log(error);

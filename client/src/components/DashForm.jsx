@@ -9,7 +9,7 @@ export default function DashForm() {
  async function submit(e){
   e.preventDefault();
    try{
-    const res=await axios.post("http://localhost:8000/patient/maindetails",{name,eye})
+    const res=await axios.post("https://retinoscan-server.vercel.app/patient/maindetails",{name,eye})
     if(res.data==='success'){
       alert("succesfully completed")
       navigate('/dashboard')

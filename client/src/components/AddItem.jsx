@@ -11,7 +11,7 @@ const showbill=()=>{
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res=await axios.post('http://localhost:8000/bill/items',{name,price});
+      const res=await axios.post('https://retinoscan-server.vercel.app/bill/items',{name,price});
       if(res.data="success"){
         alert("item added")
         setName('')

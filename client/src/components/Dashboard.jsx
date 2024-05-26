@@ -12,7 +12,7 @@ export default function Dashboard() {
   console.log(input)
   const fetchdata=async()=>{
     try{
-      const res=await axios.get("http://localhost:8000/patient/maindetails");
+      const res=await axios.get("https://retinoscan-server.vercel.app/patient/maindetails");
     setUsers(res.data);
     }
     catch(e){

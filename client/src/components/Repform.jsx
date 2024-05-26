@@ -8,7 +8,7 @@ export default function Repform() {
   async function submit(e){
   e.preventDefault();
   try{
-    const res= await axios.post("http://localhost:8000/report/details",{id,name})
+    const res= await axios.post("https://retinoscan-server.vercel.app/report/details",{id,name})
     if(res.data==="success"){
       alert("completed process")
       navigate("/reports")
