@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors({
     origin: "https://retinoscan-client.vercel.app",
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST','OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }));
