@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 dotenv.config();
 const cors = require("cors");
 const app = express();
-
+app.use(cors())
 app.use(express.json());
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://retinoscan-client.vercel.app/"],
     credentials: true
 }));
 app.use(express.urlencoded({ extended: true }));
