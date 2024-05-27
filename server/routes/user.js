@@ -27,7 +27,7 @@ router.post('/createacc', async (req, res) => {
            res.json("not exists"); 
         }
     } catch (error) {
-        console.error(error);
+        console.log(error);
     }
 });
 
@@ -51,7 +51,7 @@ router.post('/signinaccount', async (req, res) => {
         }
          
     } catch (error) {
-        console.error(error);
+        console.log(error);
     }
 });
 router.post("/Forgotpassword",async (req,res) =>{
