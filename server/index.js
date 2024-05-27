@@ -4,13 +4,14 @@ const mongoose = require("mongoose");
 dotenv.config();
 const cors = require("cors");
 const app = express();
-app.use(express.json());
-app.options('*', cors()); 
 
 app.use(cors({
-    origin: ["https://retinoscan-client.vercel.app"],
+    origin: "https://retinoscan-client.vercel.app",
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const router = require('./routes/user.js');
@@ -23,6 +24,7 @@ app.use("/upload", uploadRouter);
 app.use("/patient", Dashboard);  
 app.use("/report",reports)
 app.use("/bill",billing);
+app.options('*', cors()); 
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         console.log("database connected");
@@ -32,7 +34,7 @@ mongoose.connect(process.env.MONGO_URL)
     });
 
 app.get("/", (req, res) => {
-    res.json("server is running");
+    res.json("Server running");
 });
 
 app.listen(process.env.PORT, () => {
