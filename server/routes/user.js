@@ -1,7 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
-router.use(cors())
 const router = express.Router();
 const UserModel = require('../models/mongo');
 const nodemailer=require('nodemailer')
