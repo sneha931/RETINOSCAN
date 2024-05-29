@@ -1,20 +1,19 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
-const cors = require('cors');
-const router = express.Router();
 const UserModel = require('../models/mongo');
-const nodemailer=require('nodemailer')
-const dotenv=require('dotenv')
+const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
 const crypto = require('crypto');
-dotenv.config()
+dotenv.config();
+
+const router = express.Router();
+
 router.post('/createacc', async (req, res) => {
     const { username, email, password } = req.body;
-
     try {
-        const user =await UserModel.findOne({ email });
-
+        const user = await UserModel.findOne({ email });
         if (user) {
-            res.json("exists"); 
+            return res.json("exists");
         } else {
             const hashedPassword = await bcrypt.hash(password, 10);
             const newUser = new UserModel({
@@ -22,12 +21,12 @@ router.post('/createacc', async (req, res) => {
                 email,
                 password: hashedPassword
             });
-
             await newUser.save();
-           res.json("not exists"); 
+            return res.json("not exists");
         }
     } catch (error) {
-        console.log(error);
+        console.error(error);
+        return res.status(500).json({ error: 'Internal server error' });
     }
 });
 

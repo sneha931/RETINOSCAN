@@ -16,7 +16,7 @@ export default function Newaccount() {
             const res = await axios.post("https://retinoscan-server.vercel.app/api/createacc", { username, email, password });
 
             if (res.data === "exists") {
-                alert("Already have account just log in")
+                alert("Already have account, just log in");
                 navigate('/signinaccount');
             } else if (res.data === "not exists") {
                 navigate('/dashboard');
