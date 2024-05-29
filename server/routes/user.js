@@ -1,6 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
-const UserModel = require('../models/mongo');
+const users = require('../models/mongo');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 const crypto = require('crypto');
@@ -11,12 +11,12 @@ const router = express.Router();
 router.post('/createacc', async (req, res) => {
     const { username, email, password } = req.body;
     try {
-        const user = await UserModel.findOne({ email });
+        const user = await users.findOne({ email });
         if (user) {
             return res.json("exists");
         } else {
             const hashedPassword = await bcrypt.hash(password, 10);
-            const newUser = new UserModel({
+            const newUser = new users({
                 username,
                 email,
                 password: hashedPassword
@@ -34,7 +34,7 @@ router.post('/signinaccount', async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        const user = await UserModel.findOne({ email });
+        const user = await users.findOne({ email });
 
         if (!user) {
             res.json("not exists")
@@ -56,7 +56,7 @@ router.post('/signinaccount', async (req, res) => {
 router.post("/Forgotpassword",async (req,res) =>{
     const {email}=req.body
     try{
-const user=await UserModel.findOne({email})
+const user=await users.findOne({email})
 if(!user){
     res.json("not registered")
 }
@@ -109,7 +109,7 @@ router.post('/resetpassword/:token', async (req, res) => {
     const { password } = req.body;
     try {
         console.log(`Finding user with token: ${token}`);
-        const user = await UserModel.findOne({
+        const user = await users.findOne({
             resetPasswordToken: token,
             resetPasswordExpires: { $gt: Date.now() } 
         });
