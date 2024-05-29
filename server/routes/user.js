@@ -17,8 +17,8 @@ router.post('/createacc', async (req, res) => {
         } else {
             const hashedPassword = await bcrypt.hash(password, 10);
             const newUser = new UserModel({
-                username:username,
-                email:email,
+                username,
+                email,
                 password: hashedPassword
             });
             await newUser.save();
