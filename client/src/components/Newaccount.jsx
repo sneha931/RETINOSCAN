@@ -13,8 +13,7 @@ export default function Newaccount() {
         e.preventDefault();
 
         try {
-            const res = await axios.post("https://retinoscan-2.onrender.com/api/createacc", { username, email, password}, {
-                withCredentials: true});
+            const res = await axios.post("https://retinoscan-2.onrender.com/api/createacc", { username, email, password});
 
             if (res.data === "exists") {
                 alert("Already have account, just log in");
