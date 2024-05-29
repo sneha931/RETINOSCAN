@@ -6,7 +6,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin:"https://665774bd497f3a1bf7aafba9--ornate-concha-1f2f3c.netlify.app/",
+    origin:"https://665774bd497f3a1bf7aafba9--ornate-concha-1f2f3c.netlify.app",
     credentials:true
 }));
 app.use(express.json());
