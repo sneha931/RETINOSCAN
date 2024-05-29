@@ -5,10 +5,7 @@ const cors = require('cors');
 dotenv.config();
 
 const app = express();
-app.use(cors({
-    origin: ["https://retinoscan-2.onrender.com"],
-    credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
