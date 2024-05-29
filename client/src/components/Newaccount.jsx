@@ -22,7 +22,7 @@ export default function Newaccount() {
                 navigate('/dashboard');
             }
         } catch (error) {
-            console.log(error.res.data);
+            console.log(error.response.data);
         }
     }
 
