@@ -1,18 +1,14 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const mongoose = require("mongoose");
-const cors = require("cors");
+const mongoose = require('mongoose');
+const cors = require('cors');
 dotenv.config();
 
 const app = express();
-
 app.use(cors({
     origin: "https://retinoscan-client.vercel.app",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization",
     credentials: true
 }));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -36,6 +32,7 @@ mongoose.connect(process.env.MONGO_URL)
     .catch((e) => {
         console.error("Database connection error:", e);
     });
+
 app.get("/", (req, res) => {
     res.json("Server running");
 });
