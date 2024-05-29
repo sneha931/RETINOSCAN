@@ -22,7 +22,7 @@ export default function Newaccount() {
                 navigate('/dashboard');
             }
         } catch (error) {
-            console.error("There was an error creating the account!", error);
+            console.log(error.res.data);
         }
     }
 
