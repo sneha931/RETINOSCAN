@@ -11,7 +11,7 @@ router.post('/createacc', async (req, res) => {
     const { username, email, password } = req.body;
 
     try {
-        const user = await UserModel.findOne({ email });
+        const user =await UserModel.findOne({ email });
 
         if (user) {
             res.json("exists"); 

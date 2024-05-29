@@ -11,12 +11,12 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const router = require('./routes/user.js');
+const userRouter = require('./routes/user.js');
 const uploadRouter = require('./routes/web.js');
 const Dashboard = require('./routes/Dash.js');  
 const reports=require('./routes/Reports.js');
 const billing=require('./routes/Bill.js');
-app.use("/api", router);
+app.use("/api", userRouter);
 app.use("/upload", uploadRouter);
 app.use("/patient", Dashboard);  
 app.use("/report",reports)
