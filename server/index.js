@@ -6,7 +6,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin: "https://retinoscan-client.vercel.app",
+    origin: ["http://localhost:3000"],
     credentials: true
 }));
 app.use(express.json());
@@ -23,7 +23,6 @@ app.use("/upload", uploadRouter);
 app.use("/patient", dashboardRouter);
 app.use("/report", reportsRouter);
 app.use("/bill", billingRouter);
-app.options('*', cors());
 
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {

@@ -12,7 +12,7 @@ function ResetPassword() {
         console.log(`Submitting new password for token: ${token}`);
         
         try {
-            const response = await axios.post(`https://retinoscan-server.vercel.app/api/resetpassword/${token}`, { password });
+            const response = await axios.post(`http://localhost:8000/api/resetpassword/${token}`, { password });
             console.log(response.data);
             if (response.data.status) {
                 navigate('/signinaccount');
