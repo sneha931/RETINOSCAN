@@ -6,7 +6,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin:"https://ornate-concha-1f2f3c.netlify.app",
+    origin:"https://retinoscan-client.vercel.app",
     credentials:true
 }));
 app.use(express.json());
