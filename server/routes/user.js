@@ -81,7 +81,7 @@ transporter.verify((err,success)=>{
         console.log("Nodemailer connected");
     }
 })
-const resetUrl = `https://ornate-concha-1f2f3c.netlify.app/resetpassword/${resetToken}`;
+const resetUrl = `https://retinoscan-client.vercel.app/resetpassword/${resetToken}`;
 
 let mailOptions={
     from:process.env.GMAIL_USER,
