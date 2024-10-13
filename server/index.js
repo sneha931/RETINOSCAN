@@ -6,7 +6,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin:"retinoscan-client-bwgzozxbp-sneha931s-projects.vercel.app",
+    origin:"https://retinoscan-client.vercel.app",
     credentials:true
 }));
 app.use(express.json());
